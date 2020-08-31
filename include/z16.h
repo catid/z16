@@ -31,8 +31,6 @@ extern "C" {
     Release Notes:
 
     1.0: First release
-
-    Typically compresses about 30% better than PNG and 10% worse than FLIF.
 */
 
 /*
