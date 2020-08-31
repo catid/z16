@@ -79,18 +79,6 @@ typedef enum z16_Format_t
     */
     z16_Format_Mono16,
 
-#if 0
-    // TODO
-    /*
-        RGB Bayer pattern input:
-        The input is considered a single plane.
-    */
-    z16_Format_RGB16_BGGR,
-    z16_Format_RGB16_RGGB,
-    z16_Format_RGB16_GBRG,
-    z16_Format_RGB16_GRBG,
-#endif
-
     z16_Format_Count
 } z16_Format;
 
