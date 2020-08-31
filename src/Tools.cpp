@@ -129,6 +129,8 @@ void PredictorPicker::ImageReset()
 
 int PredictorPicker::PickPredictor(const CandidateBuffer buffers[Predictor_Count])
 {
+    return 0;
+
     int best_i = 0;
 
     // If there is exemplar data:
@@ -286,7 +288,7 @@ void EncodeInner(const uint8_t* image_data, int pixel_offset_x, int pixel_offset
             const uint16_t w = row[x - 1];
             const uint16_t value = row[x];
 
-            gap_dest[x] = ZigZag(value - GapPredict16(n2, ne2, nw, n, ne, w2, w));
+            //gap_dest[x] = ZigZag(value - GapPredict16(n2, ne2, nw, n, ne, w2, w));
             med_dest[x] = ZigZag(value - MedPredict16(n, w, nw));
         }
 
@@ -295,7 +297,7 @@ void EncodeInner(const uint8_t* image_data, int pixel_offset_x, int pixel_offset
         prev_row = row;
     }
 
-    for (int i = 0; i < Predictor_Count; ++i) {
+    for (int i = 0; i < 1; ++i) {
         Shuffle(candidates[i], buffers[i]);
     }
 }
@@ -358,7 +360,7 @@ void EncodeOuter(const uint8_t* image_data, int width, int pixel_offset_x, int p
             // This part is unique to the Outer version
             //------------------------------------------
 
-            gap_dest[x] = ZigZag(value - GapPredict16(n2, ne2, nw, n, ne, w2, w));
+            //gap_dest[x] = ZigZag(value - GapPredict16(n2, ne2, nw, n, ne, w2, w));
             med_dest[x] = ZigZag(value - MedPredict16(n, w, nw));
         }
 
@@ -367,7 +369,7 @@ void EncodeOuter(const uint8_t* image_data, int width, int pixel_offset_x, int p
         prev_row = row;
     }
 
-    for (int i = 0; i < Predictor_Count; ++i) {
+    for (int i = 0; i < 1; ++i) {
         Shuffle(candidates[i], buffers[i]);
     }
 }
